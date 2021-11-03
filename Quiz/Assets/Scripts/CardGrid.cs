@@ -1,16 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class CardGrid : MonoBehaviour
 {
-    [SerializeField]
-    private Color _gridColor;
-
-    [SerializeField]
-    private Sprite _gridSprite;
-
     [SerializeField]
     private Transform _parent;
 
@@ -21,16 +12,9 @@ public class CardGrid : MonoBehaviour
     private Vector2 _cellSize;
 
     [SerializeField]
-    private int _objectWidthCount;
-    [SerializeField]
     private float _width;
     [SerializeField]
     private float _height;
-
-    //private void Start()
-    //{
-    //    SpawnGrid(9);
-    //}
 
     public void SpawnGrid(int cardsCount)
     {

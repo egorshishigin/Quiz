@@ -7,9 +7,6 @@ public class Spawner : MonoBehaviour
 	[SerializeField]
 	private GameObject _card;
 
-	[SerializeField]
-	private Vector2 _localScale;
-
 	private bool _isFirstLevel = true;
 	[SerializeField]
 	private Answer _answer;

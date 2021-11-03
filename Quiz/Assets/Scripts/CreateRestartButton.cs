@@ -8,8 +8,6 @@ public class CreateRestartButton : MonoBehaviour
     [SerializeField]
     private Transform _holder;
     [SerializeField]
-    private Vector2 _buttonPosition;
-    [SerializeField]
     private Button.ButtonClickedEvent _onClickEvent;
 
     private GameObject button;
