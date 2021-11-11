@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 94347046}
   - component: {fileID: 94347047}
   - component: {fileID: 94347058}
+  - component: {fileID: 94347059}
   m_Layer: 5
   m_Name: GameHolder
   m_TagString: Untagged
@@ -223,14 +224,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba319e4fb6d3b94e87911346cbf29aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gridColor: {r: 1, g: 0, b: 0, a: 0}
-  _gridSprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   _parent: {fileID: 1397707334}
   _spacing: {x: 5, y: 5}
   _cellSize: {x: 30, y: 30}
-  _objectWidthCount: 3
-  _width: 2
-  _height: 2
+  _width: 1
+  _height: 1
 --- !u!114 &94347050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,7 +257,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _card: {fileID: 7870418435321751811, guid: 97a04ed7e0f95724cb9c6827fa1cd895, type: 3}
-  _localScale: {x: 10, y: 10}
   _answer: {fileID: 0}
 --- !u!114 &94347052
 MonoBehaviour:
@@ -273,7 +270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 733f16882abc01e4d92efeab47bd00e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _answers: []
   _answer: 
   RightAnswer:
     m_PersistentCalls:
@@ -326,12 +322,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 94347055}
+        m_TargetAssemblyTypeName: SpawnTaskText, Assembly-CSharp
+        m_MethodName: DestroyText
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 3
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 94347059}
+        m_TargetAssemblyTypeName: TurnOffButton, Assembly-CSharp
+        m_MethodName: DisableButton
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   WrongAnswer:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 94347047}
         m_TargetAssemblyTypeName: BounceCard, Assembly-CSharp
-        m_MethodName: Bouce
+        m_MethodName: Bounce
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -347,21 +367,6 @@ MonoBehaviour:
       - m_Target: {fileID: 94347055}
         m_TargetAssemblyTypeName: SpawnTaskText, Assembly-CSharp
         m_MethodName: SpawnText
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  DestroyText:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 94347055}
-        m_TargetAssemblyTypeName: SpawnTaskText, Assembly-CSharp
-        m_MethodName: DestroyText
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -430,18 +435,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 94347058}
-        m_TargetAssemblyTypeName: Fade, Assembly-CSharp
-        m_MethodName: FadeIn
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &94347054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,7 +478,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonSprite: {fileID: 1002314541381079101, guid: 1512172562c1b184883a67f69e9e2d36, type: 3}
   _holder: {fileID: 1397707334}
-  _buttonPosition: {x: 50, y: 50}
   _onClickEvent:
     m_PersistentCalls:
       m_Calls:
@@ -510,6 +502,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 94347058}
+        m_TargetAssemblyTypeName: Fade, Assembly-CSharp
+        m_MethodName: FadeIn
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -553,18 +557,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 94347058}
-        m_TargetAssemblyTypeName: Fade, Assembly-CSharp
-        m_MethodName: FadeIn
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 3
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
 --- !u!114 &94347058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,6 +570,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 1397707338}
+--- !u!114 &94347059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94347044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f15219d7b588874aaa983b1d3c31004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -5663,7 +5667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

@@ -9,20 +9,19 @@ public class CreateRestartButton : MonoBehaviour
     private Transform _holder;
     [SerializeField]
     private Button.ButtonClickedEvent _onClickEvent;
-
-    private GameObject button;
+    private GameObject _button;
 
     public void SpawnButton()
     {
-        button = new GameObject("Restart");
-        button.transform.SetParent(_holder);
-        button.transform.localPosition = Vector2.zero;
-        button.AddComponent<Image>().sprite = _buttonSprite;
-        button.AddComponent<Button>().onClick = _onClickEvent;
+        _button = new GameObject("Restart");
+        _button.transform.SetParent(_holder);
+        _button.transform.localPosition = Vector2.zero;
+        _button.AddComponent<Image>().sprite = _buttonSprite;
+        _button.AddComponent<Button>().onClick = _onClickEvent;
     }
-    
+
     public void DestroyButton()
     {
-        Destroy(button.gameObject);
+        Destroy(_button.gameObject);
     }
 }

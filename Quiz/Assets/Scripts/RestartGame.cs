@@ -5,9 +5,8 @@ public class RestartGame : MonoBehaviour
 {
     [SerializeField]
     private float _delay;
-
     public UnityEvent Restarted;
-    
+
     private void Restart()
     {
         Restarted.Invoke();

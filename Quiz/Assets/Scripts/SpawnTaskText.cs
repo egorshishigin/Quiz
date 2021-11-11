@@ -1,23 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI;
+
 public class SpawnTaskText : MonoBehaviour
 {
     [SerializeField]
     private string _findText;
-
     [SerializeField]
     private Transform _holder;
-
     private Text _taskText;
-
     [SerializeField]
     private Vector2 _textPosition;
-
     [SerializeField]
     private Font _font;
-
     private GameObject _text_gameObject;
-
     private string _answerText;
 
     public void SpawnText(string text)
@@ -28,6 +23,7 @@ public class SpawnTaskText : MonoBehaviour
         _taskText = _text_gameObject.AddComponent<Text>();
         this.SetTextSettings(_answerText);
     }
+
     private void SetTextSettings(string text)
     {
         _taskText.text = _findText + text;
@@ -36,8 +32,8 @@ public class SpawnTaskText : MonoBehaviour
         _taskText.rectTransform.localPosition = _textPosition;
     }
 
-    public void DestroyText(GameObject text)
+    public void DestroyText(float delay)
     {
-        Destroy(text);
+        Destroy(_taskText.gameObject, delay);
     }
 }

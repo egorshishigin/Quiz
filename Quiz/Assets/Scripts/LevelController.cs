@@ -1,14 +1,13 @@
 using UnityEngine;
 using UnityEngine.Events;
+
 public class LevelController : MonoBehaviour
 {
     [SerializeField]
     private Level[] _levels;
     [SerializeField]
     private float _delay;
-
     private int _level;
-
     public UnityEvent<int> StartGame;
     public UnityEvent EndGame;
 
@@ -43,6 +42,7 @@ public class LevelController : MonoBehaviour
         StartGame.Invoke(_levels[_level].GetCardCount());
 
     }
+
     public void StartNewGame()
     {
         Invoke("NewGame", _delay);
